@@ -47,13 +47,17 @@
     .button-icon { font-size: 18px; line-height: 1; }
 
     .profile-card {
-      margin: 20px auto 0;
+      width: 100%;
+      margin: 0;
       padding: 24px;
       border: 1px solid #dfe5dd;
       border-radius: 8px;
       background: white;
       box-shadow: 0 8px 24px rgb(37 52 43 / 7%);
     }
+
+    .profiles { display: grid; gap: 16px; margin-top: 20px; }
+    .profile-number { margin: 0 0 12px; color: #627067; font-size: 12px; font-weight: 700; }
 
     .avatar {
       width: 64px;
@@ -72,40 +76,21 @@
     .bio { margin: 10px 0 0; color: #627067; line-height: 1.6; }
     .location { margin: 16px 0 0; font-size: 14px; font-weight: 600; }
 
-    [hidden] { display: none !important; }
   </style>
 </head>
 <body>
   <main>
     <h1>My Profile</h1>
-    <p class="intro">Tap below to get to know me.</p>
+    <p class="intro">Click below to add a profile.</p>
 
-    <button class="reveal-button" id="profile-toggle" type="button" aria-expanded="false" aria-controls="profile-card">
-      <span class="button-label">Show profile</span>
+    <button class="reveal-button" id="profile-toggle" type="button" aria-controls="profiles">
+      <span class="button-label">Add profile</span>
       <span class="button-icon" aria-hidden="true">+</span>
     </button>
 
-    <article class="profile-card" id="profile-card" aria-label="Isaiah Joseph C. Delin's profile" hidden>
-      <div class="avatar" aria-hidden="true">IJD</div>
-      <h2>Isaiah Joseph C. Delin</h2>
-      <p class="bio">Hi! I’m Isaiah Joseph C. Delin, from the Philippines. Welcome to my profile!</p>
-      <p class="location">From the Philippines</p>
-    </article>
+    <section class="profiles" id="profiles" aria-label="Added profiles" aria-live="polite"></section>
   </main>
 
-  <script>
-    const toggle = document.querySelector("#profile-toggle");
-    const card = document.querySelector("#profile-card");
-    const label = toggle.querySelector(".button-label");
-    const icon = toggle.querySelector(".button-icon");
-
-    toggle.addEventListener("click", () => {
-      const isOpen = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!isOpen));
-      card.hidden = isOpen;
-      label.textContent = isOpen ? "Show profile" : "Hide profile";
-      icon.textContent = isOpen ? "+" : "−";
-    });
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
