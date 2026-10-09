@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f0">
+  <title>Isaiah Joseph C. Delin | Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@1,9..144,500,20,1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202a24;
+      --muted: #68736c;
+      --paper: #f5f6f0;
+      --green: #245640;
+      --lime: #d8ff63;
+      --coral: #ef674e;
+      --blue: #4265d6;
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100svh;
+      margin: 0;
+      padding: 30px 36px 54px;
+      background-color: var(--paper);
+      background-image: radial-gradient(#d4dacf 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .site-header,
+    main {
+      width: min(100%, 1050px);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 19px;
+      border-bottom: 1px solid #d9ded5;
+    }
+
+    .brand { display: flex; align-items: center; gap: 11px; }
+
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .brand-name,
+    .header-note {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .header-note { color: var(--muted); }
+
+    .hero {
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 1fr 0.92fr;
+      align-items: center;
+      gap: 58px;
+      padding: 62px 5.5% 44px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 22px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-mark {
+      width: 9px;
+      height: 9px;
+      background: var(--coral);
+      transform: rotate(45deg);
+    }
+
+    h1 {
+      max-width: 560px;
+      margin: 0;
+      font-size: 70px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 0.98;
+    }
+
+    h1 em {
+      color: var(--green);
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+    }
+
+    .intro {
+      max-width: 350px;
+      margin: 22px 0 28px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .reveal-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      min-height: 51px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 3px;
+      background: var(--green);
+      color: white;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .reveal-button:hover { background: #183f2e; transform: translateY(-2px); }
+    .reveal-button:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+
+    .button-icon {
+      width: 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 390px;
+    }
+
+    .poster {
+      position: relative;
+      width: min(100%, 340px);
+      aspect-ratio: 0.91;
+      overflow: hidden;
+      padding: 22px;
+      background: var(--coral);
+      color: white;
+      box-shadow: 13px 13px 0 var(--lime);
+      transform: rotate(2deg);
+    }
+
+    .poster::before {
+      position: absolute;
+      top: 68px;
+      right: 22px;
+      width: 61px;
+      height: 61px;
+      border: 1px solid rgb(255 255 255 / 70%);
+      content: "";
+    }
+
+    .poster-top,
+    .poster-bottom {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .poster-letters {
+      position: absolute;
+      inset: 50% 18px auto;
+      color: var(--lime);
+      font-size: 76px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1;
+      text-align: center;
+      transform: translateY(-50%);
+    }
+
+    .poster-bottom {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      left: 22px;
+    }
+
+    .profile-card {
+      width: min(100%, 440px);
+      display: grid;
+      grid-template-columns: 38% 1fr;
+      overflow: hidden;
+      border: 1px solid #dfe4dc;
+      background: #fffefa;
+      box-shadow: 12px 12px 0 var(--blue);
+      animation: reveal 260ms ease-out both;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      display: block;
+      object-fit: cover;
+      object-position: center 12%;
+      background: white;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.18;
+      overflow-wrap: anywhere;
+    }
+
+    .bio {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: auto 0 0;
+      padding-top: 14px;
+      border-top: 1px solid #e3e7df;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .location-mark {
+      width: 10px;
+      height: 10px;
+      background: var(--blue);
+      transform: rotate(45deg);
+    }
+
+    [hidden] { display: none !important; }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 22px 22px 38px; }
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 46px; padding: 58px 2px 20px; }
+      h1 { font-size: 58px; }
+      .stage { min-height: 340px; }
+      .poster { width: min(78%, 300px); }
+      .profile-card { width: min(100%, 460px); grid-template-columns: 36% 1fr; }
+      .profile-photo { min-height: 270px; }
+      .card-content { padding: 18px; }
+      h2 { font-size: 20px; }
+      .bio { font-size: 13px; }
+    }
+
+    @media (max-width: 420px) {
+      body { padding-inline: 18px; }
+      .header-note { font-size: 9px; }
+      h1 { font-size: 49px; }
+      .profile-photo { min-height: 250px; }
+      .card-content { padding: 15px; }
+      h2 { font-size: 19px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">IJD</span>
+      <span class="brand-name">Isaiah<br>Delin</span>
+    </div>
+    <span class="header-note">Personal profile / PH</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span>A hello from the Philippines</p>
+        <h1 id="page-title">Hello,<br>I’m <em>Isaiah.</em></h1>
+        <p class="intro">A little introduction from the Philippines. It’s nice to meet you.</p>
+        <button class="reveal-button" id="profile-toggle" type="button" aria-expanded="false" aria-controls="profile-card">
+          <span class="button-label">Get to know me</span>
+          <span class="button-icon" aria-hidden="true">+</span>
+        </button>
+      </div>
+
+      <div class="stage">
+        <div class="poster" id="poster-art" aria-hidden="true">
+          <div class="poster-top"><span>Personal</span><span>01 / PH</span></div>
+          <div class="poster-letters">IJD</div>
+          <div class="poster-bottom"><span>A little about me</span><span>✳</span></div>
+        </div>
+
+        <article class="profile-card" id="profile-card" aria-label="Isaiah Joseph C. Delin's profile" hidden>
+          <img class="profile-photo" src="profile-photo.png" alt="Portrait of Isaiah Joseph C. Delin">
+          <div class="card-content">
+            <div class="card-top"><span>Personal profile</span><span>Philippines</span></div>
+            <h2>Isaiah Joseph C. Delin</h2>
+            <p class="bio">I’m an IT graduate from the Philippines with a passion for technology, problem-solving, and creating practical digital solutions.</p>
+            <p class="location"><span class="location-mark" aria-hidden="true"></span>From the Philippines</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
